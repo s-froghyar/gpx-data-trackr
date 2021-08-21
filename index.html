@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trakr</title>
+    <script src="gpx-parser.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='styles.css' rel='stylesheet' type="text/css" />
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+  <div id="mySidepanel" class="sidepanel">
+      <div class="desc">
+        <h4>Welcome to Trakr</h4>
+        <p>In Trakr you can upload your own GPX file and visualize the data collected on your activities.</p>
+        <p>It is very simple to use!</p>
+        <p>Just upload your GPX file and Done!</p>
+
+      </div>
+      <div class="devteam">
+        <ul>
+          <li>Faizan Mohamed - 2255205</li>
+          <li>Ken Dias - 2263031</li>
+          <li>Soma Froghyar - 2267217</li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="header">
+      <button class="openbtn" onclick="toggleNav()">☰</button>
+      <img src="./logo.png"/>
+
+      <form id="loadGPXFile-form" class="upload">
+        <input type="file" name="file" id="loadGPXFile-input" class="inputfile" size="50"/>
+          <input type="submit">
+
+      </form>
+  </div>
+  <div id='map'></div>
+
+
+  <div class="bottomPanel" id="bottom">
+    <div class="bottomhead">XML/GPX Data</div>
+    <table class="datatable">
+      <tr>
+        <th id="elevation" class="heads" onclick="extendEle()">Elevation</th>
+        <th id="dist" class="heads">Distance</th>
+        <th id="time" class="heads">Time</th>
+        <th id="other" class="heads">Speed</th>
+      </tr>
+      <tr>
+        <td id="elevationPH">
+          <canvas id="myChart"></canvas>
+        </td>
+        <td id="distancePH"/>
+        <td id="timePH"/>
+        <td id="otherPH">
+          <canvas id="speedChart"></canvas>
+        </td>
+      </tr>
+    </table>
+
+
+
+
+  <script src="./Chart.js" ></script>
+  <script src="scripts.js" ></script>
+</body>
+
+</html>
