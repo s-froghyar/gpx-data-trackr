@@ -113,9 +113,10 @@ gpxParser.prototype.parse = function (string) {
             var trkpt = trkpts[idxIn];
             let pt = {};
             pt.lat = parseFloat(trkpt.getAttribute("lat"));
-		pt.lon = parseFloat(trkpt.getAttribute("lon"));
-		var buff =keepThis.getElementValue(trkpt, "time"); 
-		pt.time = buff.slice(0, buff.length-5);
+            pt.lon = parseFloat(trkpt.getAttribute("lon"));
+            pt.time =keepThis.getElementValue(trkpt, "time"); 
+            
+            // pt.time = buff.slice(0, buff.length-5);
             pt.ele = parseFloat(keepThis.getElementValue(trkpt, "ele"));
             trackpoints.push(pt);
         }
